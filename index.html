@@ -4,6 +4,7 @@
 	<title>Hot Restaurant</title>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/5.0.6/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
 	<link href="assets/style.css" rel="stylesheet">
 </head>
 <body>
@@ -19,7 +20,7 @@
 		</div>
 
 		<div class="card">
-			<div class="card-header">Table Reservation</div>
+			<div class="card-header" id="reserved">Table Reservation</div>
 				<div class="card-body">
 				<form role = "form">
 					<div class="form-group">
@@ -38,7 +39,7 @@
 					    <label for="uniqueID">Unique ID</label>
 					    <input type="text" class="form-control" id="uniqueID">
 					</div>
-					<button type="submit" class="btn btn-dark">Submit</button>
+					<button type="submit" class="btn btn-dark" id="postbtn">Submit</button>
 					</div>
 				</form>
 			</div>
@@ -57,6 +58,25 @@
 		</footer>
 	</div>
 </body>
+
+<script type="text/javascript">
+	$("#postbtn").on("click", function (event) {
+		event.preventDefault();
+		var reserved = {
+			name: $("#name").val().trim(),
+			phoneNumber: $("#phoneNumber").val().trim(),
+			email: $("#email").val().trim(),
+			uniqueID: $("#uniqueID").val().trim()
+		};
+
+		$.post("/api/new", reserved)
+			.then(function (data) {
+				console.log(data);
+				alert("Adding reservation...");
+			});
+	});
+</script>
+
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
