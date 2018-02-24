@@ -25,3 +25,12 @@ var waitlist=[{
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
+
+//Routes to AJAX page
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/reservation", function(req, res) {
+  res.sendFile(path.join(__dirname, "reservation.html"));
+});
