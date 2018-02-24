@@ -1,0 +1,23 @@
+{
+  "name": "hotrestaurant",
+  "version": "1.0.0",
+  "description": "reservation app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dfrand/HotRestaurant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dfrand/HotRestaurant/issues"
+  },
+  "homepage": "https://github.com/Dfrand/HotRestaurant#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
