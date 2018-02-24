@@ -1,6 +1,7 @@
 //Dependencies
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require("path");
 
 //Sets up Express Server
 var app = express();
@@ -34,3 +35,5 @@ app.get("/", function(req, res) {
 app.get("/reservation", function(req, res) {
   res.sendFile(path.join(__dirname, "reservation.html"));
 });
+
+//
