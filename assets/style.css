@@ -1,0 +1,8 @@
+body {
+	background-image: url("http://www.grillcleaningcompany.com/wp-content/uploads/2014/02/Flames-BG-0001.jpg");
+	background-repeat: no-repeat;
+	background-size:100% 100vh;
+}
+.card {
+	margin-bottom: 10px; 
+}
